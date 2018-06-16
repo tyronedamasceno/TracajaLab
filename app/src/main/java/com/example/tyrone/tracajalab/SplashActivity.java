@@ -22,7 +22,7 @@ public class SplashActivity extends Activity {
     }
 
     public void showMainActivity() {
-        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+        Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
         startActivity(intent);
         finish();
     }
