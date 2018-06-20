@@ -4,20 +4,14 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
-public class LoginActivity extends Activity {
+public class SignUpActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_sign_up);
     }
 
-    public void forgot(View view) {
-    }
-
-    public void signup(View view) {
-    }
-
-    public void entrar(View view) {
+    public void cadastrar(View view) {
     }
 }
