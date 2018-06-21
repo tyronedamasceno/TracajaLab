@@ -1,4 +1,4 @@
-package com.example.tyrone.tracajalab.domain;
+package com.example.tyrone.tracajalab.Domain;
 
 import java.util.Date;
 

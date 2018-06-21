@@ -1,8 +1,10 @@
-package com.example.tyrone.tracajalab;
+package com.example.tyrone.tracajalab.Activities;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.tyrone.tracajalab.R;
 
 public class ForgotPasswordActivity extends Activity {
 

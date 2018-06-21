@@ -1,4 +1,4 @@
-package com.example.tyrone.tracajalab.domain;
+package com.example.tyrone.tracajalab.Domain;
 
 public enum TipoExame {
 
