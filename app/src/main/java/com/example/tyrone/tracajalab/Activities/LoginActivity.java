@@ -1,7 +1,10 @@
 package com.example.tyrone.tracajalab.Activities;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
@@ -29,6 +32,8 @@ public class LoginActivity extends Activity {
 
         edt_login = findViewById(R.id.edt_login_login);
         edt_password = findViewById(R.id.edt_password_login);
+        edt_login.setText("");
+        edt_password.setText("");
 
         mAuth = FirebaseAuth.getInstance();
     }
@@ -56,6 +61,10 @@ public class LoginActivity extends Activity {
     }
 
     public void entrar(View view) {
+        if (!isConnected()) {
+            Toast.makeText(this, "Sem conexão com a internet", Toast.LENGTH_SHORT).show();
+            return;
+        }
         String login = edt_login.getText().toString();
         String password = edt_password.getText().toString();
 
@@ -66,10 +75,21 @@ public class LoginActivity extends Activity {
                         if (task.isSuccessful()) {
                             Toast.makeText(getApplication(), "Login com sucesso.", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(getApplication(), WelcomeActivity.class);
+                            startActivity(intent);
                         } else {
                             Toast.makeText(getApplication(), "Email e/ou senha incorreto.", Toast.LENGTH_SHORT).show();
+                            edt_password.setText("");
                         }
                     }
                 });
+
+    }
+
+
+    public boolean isConnected() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo info = cm.getActiveNetworkInfo();
+        boolean isConnected = info != null && info.isConnectedOrConnecting();
+        return isConnected;
     }
 }

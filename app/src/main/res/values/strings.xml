@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">Tracaja Lab</string>
-    <string name="signup_str"><u>Cadastre-se</u></string>
-    <string name="forgot_str"><u>Esqueci minha senha</u></string>
+    <string name="signup_str"><u>Não tem login? Cadastre-se agora</u></string>
 </resources>
