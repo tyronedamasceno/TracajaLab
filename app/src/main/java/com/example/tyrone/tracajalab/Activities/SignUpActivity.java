@@ -33,9 +33,9 @@ public class SignUpActivity extends Activity {
         edt_email_signup = findViewById(R.id.edt_email_signup);
         edt_password_signup = findViewById(R.id.edt_password_signup);
         edt_confirm_password_signup = findViewById(R.id.edt_confirm_password_signup);
-        edt_email_signup.setText("");
-        edt_password_signup.setText("");
-        edt_confirm_password_signup.setText("");
+        edt_email_signup.setText(" ");
+        edt_password_signup.setText(" ");
+        edt_confirm_password_signup.setText(" ");
 
         mAuth = FirebaseAuth.getInstance();
     }
@@ -51,8 +51,8 @@ public class SignUpActivity extends Activity {
 
         if (!password.equals(confirmPassword)) {
             Toast.makeText(this, "As senhas não coincidem", Toast.LENGTH_SHORT).show();
-            edt_password_signup.setText("");
-            edt_confirm_password_signup.setText("");
+            edt_password_signup.setText(" ");
+            edt_confirm_password_signup.setText(" ");
             return;
         }
 

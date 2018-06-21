@@ -32,8 +32,8 @@ public class LoginActivity extends Activity {
 
         edt_login = findViewById(R.id.edt_login_login);
         edt_password = findViewById(R.id.edt_password_login);
-        edt_login.setText("");
-        edt_password.setText("");
+        edt_login.setText(" ");
+        edt_password.setText(" ");
 
         mAuth = FirebaseAuth.getInstance();
     }
@@ -48,11 +48,6 @@ public class LoginActivity extends Activity {
             startActivity(intent);
         }
 
-    }
-
-    public void forgot(View view) {
-        Intent intent = new Intent(this, ForgotPasswordActivity.class);
-        startActivity(intent);
     }
 
     public void signup(View view) {
@@ -78,7 +73,7 @@ public class LoginActivity extends Activity {
                             startActivity(intent);
                         } else {
                             Toast.makeText(getApplication(), "Email e/ou senha incorreto.", Toast.LENGTH_SHORT).show();
-                            edt_password.setText("");
+                            edt_password.setText(" ");
                         }
                     }
                 });
