@@ -7,7 +7,7 @@
     tools:context=".LoginActivity">
 
     <TextView
-        android:id="@+id/txt_title"
+        android:id="@+id/txt_title_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -23,20 +23,19 @@
         />
 
     <TextView
-        android:id="@+id/txt_subtitle"
+        android:id="@+id/txt_subtitle_login"
         android:layout_width="wrap_content"
-        android:layout_height="23dp"
+        android:layout_height="26dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="0dp"
         android:text="Análises Clínicas"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_title" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_title_login" />
 
     <TextView
-        android:id="@+id/txt_login"
+        android:id="@+id/txt_login_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -50,44 +49,44 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edt_login"
+        android:id="@+id/edt_login_login"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textSize="18sp"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toBottomOf="@+id/txt_login"
-        app:layout_constraintStart_toEndOf="@+id/txt_login"
-        app:layout_constraintTop_toTopOf="@+id/txt_login"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_login_login"
+        app:layout_constraintStart_toEndOf="@+id/txt_login_login"
+        app:layout_constraintTop_toTopOf="@+id/txt_login_login"
         app:layout_constraintVertical_bias="0.444" />
 
     <TextView
-        android:id="@+id/txt_password"
+        android:id="@+id/txt_password_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
         android:layout_marginTop="12dp"
         android:text="Senha:"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/txt_login"
+        app:layout_constraintEnd_toEndOf="@+id/txt_login_login"
         app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="@+id/txt_login"
-        app:layout_constraintTop_toBottomOf="@+id/txt_login" />
+        app:layout_constraintStart_toStartOf="@+id/txt_login_login"
+        app:layout_constraintTop_toBottomOf="@+id/txt_login_login" />
 
     <EditText
-        android:id="@+id/edt_password"
+        android:id="@+id/edt_password_login"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textSize="18sp"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="@+id/txt_password"
-        app:layout_constraintStart_toEndOf="@id/txt_password"
-        app:layout_constraintTop_toTopOf="@id/txt_password"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_password_login"
+        app:layout_constraintStart_toEndOf="@id/txt_password_login"
+        app:layout_constraintTop_toTopOf="@id/txt_password_login"
         />
 
     <Button
-        android:id="@+id/btn_entrar"
+        android:id="@+id/btn_entrar_login"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -95,13 +94,13 @@
         android:layout_marginTop="8dp"
         android:text="Entrar"
         android:onClick="entrar"
-        app:layout_constraintEnd_toEndOf="@+id/edt_password"
+        app:layout_constraintEnd_toEndOf="@+id/edt_password_login"
         app:layout_constraintHorizontal_bias="0.307"
         app:layout_constraintStart_toStartOf="@+id/txt_password"
-        app:layout_constraintTop_toBottomOf="@+id/edt_password" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_password_login" />
 
     <TextView
-        android:id="@+id/txt_signup"
+        android:id="@+id/txt_signup_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="104dp"
@@ -110,21 +109,21 @@
         android:text="@string/signup_str"
         android:onClick="signup"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/btn_entrar"
-        app:layout_constraintTop_toBottomOf="@+id/btn_entrar"
+        app:layout_constraintStart_toStartOf="@+id/btn_entrar_login"
+        app:layout_constraintTop_toBottomOf="@+id/btn_entrar_login"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/txt_forgot_password"
+        android:id="@+id/txt_forgot_password_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:text="@string/forgot_str"
         android:onClick="forgot"
-        app:layout_constraintBottom_toBottomOf="@+id/txt_signup"
-        app:layout_constraintStart_toEndOf="@+id/txt_signup"
-        app:layout_constraintTop_toTopOf="@+id/txt_signup"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_signup_login"
+        app:layout_constraintStart_toEndOf="@+id/txt_signup_login"
+        app:layout_constraintTop_toTopOf="@+id/txt_signup_login"
         app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>
