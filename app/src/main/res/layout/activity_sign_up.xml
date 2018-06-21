@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="32dp"
     tools:context=".Activities.SignUpActivity">
 
     <TextView
         android:id="@+id/txt_title_signup"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -16,6 +17,7 @@
         android:text="Tracajá Lab"
         android:textSize="36sp"
         android:textStyle="bold"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -23,8 +25,9 @@
 
     <TextView
         android:id="@+id/txt_subtitle_signup"
-        android:layout_width="wrap_content"
-        android:layout_height="23dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="0dp"
@@ -34,89 +37,60 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_title_signup" />
 
-    <TextView
-        android:id="@+id/txt_email_signup"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/edt_email_signup"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="184dp"
-        android:text="Email:"
+        android:layout_marginTop="80dp"
+        android:hint="Email:"
+        android:inputType="textEmailAddress"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.188"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/edt_email_signup"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:textSize="18sp"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toBottomOf="@+id/txt_email_signup"
-        app:layout_constraintStart_toEndOf="@+id/txt_email_signup"
-        app:layout_constraintTop_toTopOf="@+id/txt_email_signup"
-        app:layout_constraintVertical_bias="0.444" />
-
-    <TextView
-        android:id="@+id/txt_password_signup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Senha:"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/txt_email_signup"
-        app:layout_constraintTop_toBottomOf="@+id/txt_email_signup" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_subtitle_signup" />
 
     <EditText
         android:id="@+id/edt_password_signup"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:textSize="18sp"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="@+id/txt_password_signup"
-        app:layout_constraintStart_toEndOf="@id/txt_password_signup"
-        app:layout_constraintTop_toTopOf="@id/txt_password_signup"
-        />
-
-    <TextView
-        android:id="@+id/txt_confirm_password_signup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="12dp"
-        android:text="Confirmar Senha:"
-        android:textSize="18dp"
-        app:layout_constraintEnd_toEndOf="@id/txt_email_signup"
-        app:layout_constraintTop_toBottomOf="@id/txt_password_signup"/>
-
-    <EditText
-        android:id="@+id/edt_confirm_password_signup"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:textSize="18dp"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="@id/txt_confirm_password_signup"
-        app:layout_constraintStart_toEndOf="@id/txt_confirm_password_signup"
-        app:layout_constraintTop_toTopOf="@id/txt_confirm_password_signup"/>
-
-    <Button
-        android:id="@+id/btn_cadastrar_signup"
-        android:layout_width="260dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
+        android:hint="Senha:"
+        android:inputType="textPassword"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_email_signup" />
+
+    <EditText
+        android:id="@+id/edt_confirm_password_signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:hint="Confirmar Senha :"
+        android:inputType="textPassword"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_password_signup" />
+
+    <Button
+        android:id="@+id/btn_cadastrar_signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
         android:onClick="cadastrar"
         android:text="Cadastrar"
-        app:layout_constraintEnd_toEndOf="@+id/edt_password_signup"
-        app:layout_constraintHorizontal_bias="0.214"
-        app:layout_constraintStart_toStartOf="@+id/txt_password_signup"
-        app:layout_constraintTop_toBottomOf="@+id/txt_confirm_password_signup" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_confirm_password_signup" />
 
 
 </android.support.constraint.ConstraintLayout>
