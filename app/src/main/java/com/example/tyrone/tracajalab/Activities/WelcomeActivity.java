@@ -11,20 +11,26 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class WelcomeActivity extends Activity {
 
-    TextView txt_welcome;
-    FirebaseUser currentUser;
+    private TextView txt_welcome;
+    private FirebaseUser currentUser;
+    private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
-        currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        mAuth = FirebaseAuth.getInstance();
+
+        currentUser = mAuth.getCurrentUser();
 
         txt_welcome = findViewById(R.id.txt_welcome);
         txt_welcome.setText(String.format("Olá %s, seja bem vindo!", currentUser.getEmail()));
     }
 
     public void schedule(View view) {
+        mAuth.signOut();
+        finish();
     }
 
     public void receiveResults(View view) {
