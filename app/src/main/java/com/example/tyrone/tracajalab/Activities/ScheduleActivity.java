@@ -2,6 +2,7 @@ package com.example.tyrone.tracajalab.Activities;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.tyrone.tracajalab.Domain.Exame;
 import com.example.tyrone.tracajalab.Fragments.DescribeFragment;
@@ -23,5 +24,9 @@ public class ScheduleActivity extends Activity implements ExamesFragment.OnItemC
     @Override
     public void onClickExame(Exame exame) {
         describeFragment.changeExame(exame);
+    }
+
+    public void scheduleExam(View view) {
+
     }
 }
