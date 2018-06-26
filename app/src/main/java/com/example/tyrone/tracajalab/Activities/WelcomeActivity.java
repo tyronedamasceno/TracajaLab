@@ -1,6 +1,7 @@
 package com.example.tyrone.tracajalab.Activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -29,8 +30,8 @@ public class WelcomeActivity extends Activity {
     }
 
     public void schedule(View view) {
-        mAuth.signOut();
-        finish();
+        Intent intent = new Intent(this, ScheduleActivity.class);
+        startActivity(intent);
     }
 
     public void receiveResults(View view) {
