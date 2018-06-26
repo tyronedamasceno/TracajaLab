@@ -7,6 +7,7 @@ import android.view.View;
 import com.example.tyrone.tracajalab.Domain.Exame;
 import com.example.tyrone.tracajalab.Fragments.DescribeFragment;
 import com.example.tyrone.tracajalab.Fragments.ExamesFragment;
+import com.example.tyrone.tracajalab.Pickers.DatePicker;
 import com.example.tyrone.tracajalab.R;
 
 public class ScheduleActivity extends Activity implements ExamesFragment.OnItemClick {
@@ -27,6 +28,7 @@ public class ScheduleActivity extends Activity implements ExamesFragment.OnItemC
     }
 
     public void scheduleExam(View view) {
-
+        DatePicker datePicker = new DatePicker();
+        datePicker.show(getFragmentManager(), "datePicker");
     }
 }
