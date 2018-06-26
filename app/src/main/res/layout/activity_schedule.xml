@@ -46,7 +46,7 @@
             android:id="@+id/frag_describe"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="3"
+            android:layout_weight="2"
             android:name="com.example.tyrone.tracajalab.Fragments.DescribeFragment"
             tools:layout="@layout/fragment_describe"
             />
