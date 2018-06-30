@@ -22,18 +22,24 @@ public class ScheduleActivity extends Activity
     private int dayOfMonth;
     private int hourOfDay;
     private int minute;
+    private Exame currentExame;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);
-
         describeFragment = (DescribeFragment) getFragmentManager().findFragmentById(R.id.frag_describe);
+        currentExame = new Exame(
+                getResources().getStringArray(R.array.exames)[0],
+                getResources().getStringArray(R.array.orientacoes)[0],
+                getResources().getStringArray(R.array.jejum)[0]);
     }
 
     @Override
     public void onClickExame(Exame exame) {
         describeFragment.changeExame(exame);
+        currentExame = exame;
     }
 
     public void scheduleExam(View view) {
@@ -57,7 +63,8 @@ public class ScheduleActivity extends Activity
         this.hourOfDay = hourOfDay;
         this.minute = minute;
 
-        Toast.makeText(this, String.format("Exame agendado em %d/%d/%d as %d:%d",
-                dayOfMonth, month, year, hourOfDay, minute), Toast.LENGTH_LONG).show();
+        Toast.makeText(this, currentExame.toString(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, String.format("Exame agendado em %d/%d/%d as %d:%d",
+        //        dayOfMonth, month, year, hourOfDay, minute), Toast.LENGTH_LONG).show();
     }
 }
