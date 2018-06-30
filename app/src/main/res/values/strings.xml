@@ -1,4 +1,184 @@
 <resources>
     <string name="app_name">Tracaja Lab</string>
     <string name="signup_str"><u>Não tem login? Cadastre-se agora</u></string>
+
+    <string-array name="exames">
+        <item>Hemograma</item>
+        <item>Coagulograma</item>
+        <item>Tempo de Sangramento</item>
+        <item>Tempo de Coagulação</item>
+        <item>AST/TGO</item>
+        <item>ALT/TGP</item>
+        <item>Colesterol Total e Frações</item>
+        <item>Triglicerídeos</item>
+        <item>Uréia (Soro)</item>
+        <item>Uréia (Urina Isolada)</item>
+        <item>Creatinina</item>
+        <item>Creatinina (Urina Isolada)</item>
+        <item>Depuração de Creatinina</item>
+        <item>Ácido Úrico</item>
+        <item>Proteínas Plasmáticas</item>
+        <item>Glicemia em Jejum</item>
+        <item>Hemoglobina Glicada</item>
+        <item>Insulina</item>
+        <item>Testosterona</item>
+        <item>Prolactina</item>
+        <item>Estrógeno</item>
+        <item>Progesterona Plasmática</item>
+        <item>PSA</item>
+        <item>BetaHCG</item>
+        <item>Imunoglobulina A, D e E</item>
+        <item>Fator Reumatóide</item>
+        <item>Rubéola</item>
+        <item>Toxoplasmose</item>
+        <item>Sífilis</item>
+        <item>Tipagem Sanguínea</item>
+        <item>Fator RH</item>
+        <item>Coombs Direto</item>
+        <item>Coombs Indireto</item>
+    </string-array>
+
+    <string-array name="orientacoes">
+        <item>Sem orientações específicas.</item>
+        <item>
+            Informar medicamentos tomados nos últimos sete dias.
+        </item>
+        <item>Sem orientações específicas.</item>
+        <item>Sem orientações específicas.</item>
+        <item>
+            Não pode ter feito eletroneuromiografia nos últimos sete dias.<br/>
+            Não realizar exercício físico intenso nas 24h que antecedem ao exame.
+        </item>
+        <item>
+            Não pode ter feito biópsia hepática nos últimos cinco dias.
+        </item>
+        <item>
+            Não realizar exercício físico intenso nas 24h que antecedem ao exame.<br/>
+            Não consumir bebida alcóolica nas 72h que antecedem ao exame.
+        </item>
+        <item>
+            Dieta habitual durante cinco dias anteriores ao exame.<br/>
+            Não realizar exercício físico intenso nas 24h que antecedem ao exame.<br/>
+            Não consumir bebida alcóolica nas 72h que antecedem ao exame.
+        </item>
+        <item>Sem orientações específicas.</item>
+        <item>
+            Deve-se coletar a primeira urina do dia.<br/>
+            O primeiro jato deve ser descartado.<br/>
+            Não há necessidade de ingerir líquidos para induzir a diurese.
+        </item>
+        <item>Sem orientações específicas.</item>
+        <item>
+            Deve-se coletar a primeira urina do dia.<br/>
+            O primeiro jato deve ser descartado.<br/>
+            Não há necessidade de ingerir líquidos para induzir a diurese.
+        </item>
+        <item>
+            Desprezar a primeira urina no dia e anotar o horário exato da micção.<br/>
+            Durante o resto do dia e também à noite, deve-se recolher integralmente a urina de cada micção, colocando-a no mesmo frasco de coleta.<br/>
+            Coletar a primeira urina do dia seguinte na mesma hora em que desprezou a urina do dia anterior.<br/>
+            Para pacientes mulheres, recomenda-se que o exame não seja realizado durante o período menstrual.
+        </item>
+        <item>Sem orientações específicas.</item>
+        <item>Sem orientações específicas.</item>
+        <item>
+            Não consumir bebida alcóolica nas 72h que antecedem ao exame.<br/>
+            Não realizar exercício físico no dia da coleta.
+        </item>
+        <item>
+            Informar uso de medicamentos.
+        </item>
+        <item>
+            Evitar fazer esforço físico antes da coleta.<br/>
+            Recomenda-se que medicamentos para diabetes sejam administrados após a coleta.
+        </item>
+        <item>
+            Coleta 2h após o horário habitual de acordar.
+        </item>
+        <item>Sem orientações específicas.</item>
+        <item>
+            A coleta deverá ser feita preferencialmente entre o 20º e 24º dia do ciclo menstrual.
+        </item>
+        <item>
+            A coleta deverá ser feita preferencialmente entre o 20º e 24º dia do ciclo menstrual.
+        </item>
+        <item>
+            Não ter ejaculado nas 48h que antecedem ao exame.<br/>
+            Não ter andado de bicicleta, motocicleta ou feito equitação nos dois dias anteriores ao exame.<br/>
+        </item>
+        <item>
+            Informar a data do último ciclo menstrual.
+        </item>
+        <item>
+            Para as lactantes, a coleta deverá ser realizada entre as mamadas.
+        </item>
+        <item>Sem orientações específicas.</item>
+        <item>Sem orientações específicas.</item>
+        <item>Para as lactantes, a coleta deverá ser realizada entre as mamadas.</item>
+        <item>Sem orientações específicas.</item>
+        <item>
+            Informar uso de medicamentos
+        </item>
+        <item>
+            Informar uso de medicamentos
+        </item>
+        <item>Sem orientações específicas.</item>
+        <item>Sem orientações específicas.</item>
+    </string-array>
+
+    <string-array name="jejum">
+        <item>Jejum não necessário.</item>
+        <item>Jejum mínimo de 4h para todas as idades.</item>
+        <item>Jejum não necessário.</item>
+        <item>Jejum desejável de 4h.</item>
+        <item>Jejum mínimo de 3h para todas as idades.</item>
+        <item>Jejum mínimo de 3h para todas as idades.</item>
+        <item>
+            Jejum mínimo de 4h para crianças de até um ano.<br/>
+            Jejum mínimo de 6h para crianças de um a seis anos.<br/>
+            Jejum mínimo de 12h acima dos seis anos.
+        </item>
+        <item>
+            Jejum mínimo de 4h para crianças de até um ano.<br/>
+            Jejum mínimo de 6h para crianças de um a seis anos.<br/>
+            Jejum mínimo de 12h acima dos seis anos.
+        </item>
+        <item>Jejum mínimo de 3h para todas as idades.</item>
+        <item>Jejum não necessário.</item>
+        <item>Jejum mínimo de 3h para todas as idades.</item>
+        <item>Jejum não necessário.</item>
+        <item>Jejum não necessário.</item>
+        <item>Jejum mínimo de 4h para todas as idades.</item>
+        <item>Jejum não necessário.</item>
+        <item>
+            Jejum mínimo de 3h para crianças de até três anos.<br/>
+            Jejum mínimo de 4h para crianças de três a nove anos.<br/>
+            Jejum mínimo de 8h acima dos nove anos.
+        </item>
+        <item>Jejum não necessário.</item>
+        <item>
+            Jejum mínimo de 3h para crianças de até três anos.<br/>
+            Jejum mínimo de 4h para crianças de três a nove anos.<br/>
+            Jejum mínimo de 8h acima dos nove anos.
+        </item>
+        <item>
+            Jejum mínimo de 3h para crianças de até seis anos.<br/>
+            Jejum mínimo de 8h acima dos seis anos.
+        </item>
+        <item>Jejum mínimo de 3h para todas as idades.</item>
+        <item>Jejum mínimo de 3h para todas as idades.</item>
+        <item>Jejum mínimo de 3h para todas as idades.</item>
+        <item>Jejum mínimo de 3h para todas as idades.</item>
+        <item>Jejum não necessário.</item>
+        <item>Jejum não necessário.</item>
+        <item>Jejum não necessário.</item>
+        <item>Jejum mínimo de 4h para todas as idades.</item>
+        <item>Jejum mínimo de 8h para todas as idades.</item>
+        <item>Jejum mínimo de 8h para todas as idades.</item>
+        <item>Jejum não necessário.</item>
+        <item>Jejum não necessário.</item>
+        <item>Jejum não necessário.</item>
+        <item>Jejum não necessário.</item>
+    </string-array>
+
 </resources>
