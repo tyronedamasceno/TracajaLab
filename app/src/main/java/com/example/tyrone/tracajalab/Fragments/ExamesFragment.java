@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.tyrone.tracajalab.Domain.Exame;
-import com.example.tyrone.tracajalab.Domain.TipoExame;
+import com.example.tyrone.tracajalab.R;
 
 public class ExamesFragment extends ListFragment {
 
@@ -31,11 +31,12 @@ public class ExamesFragment extends ListFragment {
         super.onCreate(savedInstanceState);
 
         adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1);
-        String[] nomes = {"Hemograma", "Colesterol", "Glicose"};
-        String[] descricao = {"Fazer em jejum", "Fazem sem jejum", "Fazer com ou sem jejum"};
+        String[] exames = getActivity().getResources().getStringArray(R.array.exames);
+        String[] orientacoes = getActivity().getResources().getStringArray(R.array.orientacoes);
+        String[] jejum = getActivity().getResources().getStringArray(R.array.jejum);
 
-        for (int i = 0; i < nomes.length; i++) {
-            Exame exame = new Exame(nomes[i], descricao[i]);
+        for (int i = 0; i < exames.length; i++) {
+            Exame exame = new Exame(exames[i], orientacoes[i], jejum[i]);
             adapter.add(exame);
         }
         setListAdapter(adapter);

@@ -1,15 +1,20 @@
 package com.example.tyrone.tracajalab.Domain;
 
-import java.util.Date;
-
 public class Exame {
 
     private String nome;
-    private String descricao;
+    private String orientacao;
+    private String jejum;
 
-    public Exame(String nome, String descricao) {
+    public Exame(String nome, String orientacao, String jejum) {
         this.nome = nome;
-        this.descricao = descricao;
+        this.orientacao = orientacao;
+        this.jejum = jejum;
+    }
+
+    @Override
+    public String toString() {
+        return this.nome;
     }
 
     public String getNome() {
@@ -20,74 +25,19 @@ public class Exame {
         this.nome = nome;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getOrientacao() {
+        return orientacao;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setOrientacao(String orientacao) {
+        this.orientacao = orientacao;
     }
 
-    @Override
-    public String toString() {
-        return this.nome;
+    public String getJejum() {
+        return jejum;
     }
 
-    /*private String id;
-    private TipoExame tipo;
-    private Date data;
-    private boolean pronto;
-    private String resultado;
-
-    public Exame() {
-
+    public void setJejum(String jejum) {
+        this.jejum = jejum;
     }
-
-    public Exame(String id, TipoExame tipo, Date data, boolean pronto, String resultado) {
-        this.id = id;
-        this.tipo = tipo;
-        this.data = data;
-        this.pronto = pronto;
-        this.resultado = resultado;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public TipoExame getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(TipoExame tipo) {
-        this.tipo = tipo;
-    }
-
-    public Date getData() {
-        return data;
-    }
-
-    public void setData(Date data) {
-        this.data = data;
-    }
-
-    public boolean isPronto() {
-        return pronto;
-    }
-
-    public void setPronto(boolean pronto) {
-        this.pronto = pronto;
-    }
-
-    public String getResultado() {
-        return resultado;
-    }
-
-    public void setResultado(String resultado) {
-        this.resultado = resultado;
-    }*/
 }
