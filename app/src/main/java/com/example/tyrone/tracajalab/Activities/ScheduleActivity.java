@@ -7,10 +7,20 @@ import android.widget.Toast;
 
 import com.example.tyrone.tracajalab.Dialogs.TimePicker;
 import com.example.tyrone.tracajalab.Domain.Exame;
+import com.example.tyrone.tracajalab.Domain.MyDate;
 import com.example.tyrone.tracajalab.Fragments.DescribeFragment;
 import com.example.tyrone.tracajalab.Fragments.ExamesFragment;
 import com.example.tyrone.tracajalab.Dialogs.DatePicker;
 import com.example.tyrone.tracajalab.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.UUID;
 
 public class ScheduleActivity extends Activity
         implements ExamesFragment.OnItemClick, DatePicker.DateSetListener, TimePicker.TimeSetListener {
@@ -23,6 +33,13 @@ public class ScheduleActivity extends Activity
     private int hourOfDay;
     private int minute;
     private Exame currentExame;
+
+    private FirebaseUser currentUser;
+    private FirebaseAuth mAuth;
+    private FirebaseDatabase database;
+
+    private DatabaseReference pacientReference;
+
 
 
     @Override
@@ -45,7 +62,6 @@ public class ScheduleActivity extends Activity
     public void scheduleExam(View view) {
         DatePicker datePicker = new DatePicker();
         datePicker.show(getFragmentManager(), "datePicker");
-
     }
 
     @Override
@@ -63,8 +79,27 @@ public class ScheduleActivity extends Activity
         this.hourOfDay = hourOfDay;
         this.minute = minute;
 
-        Toast.makeText(this, currentExame.toString(), Toast.LENGTH_SHORT).show();
-        //Toast.makeText(this, String.format("Exame agendado em %d/%d/%d as %d:%d",
-        //        dayOfMonth, month, year, hourOfDay, minute), Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, currentExame.toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, String.format("Exame agendado em %d/%d/%d as %d:%d",
+                dayOfMonth, month, year, hourOfDay, minute), Toast.LENGTH_LONG).show();
+        currentExame.setData(new MyDate(
+                this.year,
+                this.month,
+                this.dayOfMonth,
+                this.hourOfDay,
+                this.minute));
+        currentExame.setPronto(false);
+        updateDatabase();
+    }
+
+    public void updateDatabase() {
+
+        String id = UUID.randomUUID().toString();
+
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
+        database = FirebaseDatabase.getInstance();
+        pacientReference = database.getReference("pacientes");
+        pacientReference.child(currentUser.getUid()).child("exames").child(id).setValue(currentExame);
     }
 }

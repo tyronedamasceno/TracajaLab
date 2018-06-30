@@ -1,23 +1,13 @@
 package com.example.tyrone.tracajalab.Domain;
 
-import java.util.Date;
-
 public class Exame {
 
     private String nome;
     private String orientacao;
     private String jejum;
     private String resultado;
-    private Date data;
+    private MyDate data;
     private boolean pronto;
-
-    public boolean isPronto() {
-        return pronto;
-    }
-
-    public void setPronto(boolean pronto) {
-        this.pronto = pronto;
-    }
 
     public Exame(String nome, String orientacao, String jejum) {
         this.nome = nome;
@@ -25,11 +15,11 @@ public class Exame {
         this.jejum = jejum;
     }
 
-    public Exame (Date data) {
+    public Exame (MyDate data) {
         this.data = data;
     }
 
-    public Exame (Date data, String resultado) {
+    public Exame (MyDate data, String resultado) {
         this.data = data;
         this.resultado = resultado;
     }
@@ -69,5 +59,21 @@ public class Exame {
 
     public void setJejum(String jejum) {
         this.jejum = jejum;
+    }
+
+    public boolean isPronto() {
+        return pronto;
+    }
+
+    public void setPronto(boolean pronto) {
+        this.pronto = pronto;
+    }
+
+    public MyDate getData() {
+        return data;
+    }
+
+    public void setData(MyDate data) {
+        this.data = data;
     }
 }
