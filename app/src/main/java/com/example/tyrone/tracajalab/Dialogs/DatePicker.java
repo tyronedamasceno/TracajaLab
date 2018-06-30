@@ -7,6 +7,8 @@ import android.content.Context;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import java.util.Calendar;
+
 public class DatePicker extends DialogFragment implements DatePickerDialog.OnDateSetListener{
 
     private DateSetListener listener;
@@ -22,7 +24,8 @@ public class DatePicker extends DialogFragment implements DatePickerDialog.OnDat
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        return new DatePickerDialog(getActivity(), this, 2018, 6, 1 );
+        Calendar c = Calendar.getInstance();
+        return new DatePickerDialog(getActivity(), this, c.get(Calendar.YEAR), c.get(Calendar.MONTH)-1, c.get(Calendar.DAY_OF_MONTH) );
     }
 
     @Override

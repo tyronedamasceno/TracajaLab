@@ -6,6 +6,8 @@ import android.app.TimePickerDialog;
 import android.content.Context;
 import android.os.Bundle;
 
+import java.util.Calendar;
+
 public class TimePicker extends DialogFragment implements TimePickerDialog.OnTimeSetListener {
 
     private TimeSetListener listener;
@@ -21,7 +23,8 @@ public class TimePicker extends DialogFragment implements TimePickerDialog.OnTim
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        return new TimePickerDialog(getActivity(), this, 9, 00, true);
+        Calendar c = Calendar.getInstance();
+        return new TimePickerDialog(getActivity(), this, c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE), true);
     }
 
     @Override
