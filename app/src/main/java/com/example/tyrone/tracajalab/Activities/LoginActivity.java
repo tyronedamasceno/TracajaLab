@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.tyrone.tracajalab.Dialogs.ExitDialog;
 import com.example.tyrone.tracajalab.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -32,8 +33,8 @@ public class LoginActivity extends Activity {
 
         edt_login = findViewById(R.id.edt_login_login);
         edt_password = findViewById(R.id.edt_password_login);
-        edt_login.setText(" ");
-        edt_password.setText(" ");
+        edt_login.setText("");
+        edt_password.setText("");
 
         mAuth = FirebaseAuth.getInstance();
     }
@@ -73,7 +74,7 @@ public class LoginActivity extends Activity {
                             startActivity(intent);
                         } else {
                             Toast.makeText(getApplication(), "Email e/ou senha incorreto.", Toast.LENGTH_SHORT).show();
-                            edt_password.setText(" ");
+                            edt_password.setText("");
                         }
                     }
                 });
