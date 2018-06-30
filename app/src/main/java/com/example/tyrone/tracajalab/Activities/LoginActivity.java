@@ -69,7 +69,7 @@ public class LoginActivity extends Activity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(getApplication(), "Login com sucesso.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplication(), "Login realizado com sucesso.", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(getApplication(), WelcomeActivity.class);
                             startActivity(intent);
                         } else {
