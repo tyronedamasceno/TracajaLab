@@ -52,6 +52,5 @@ public class WelcomeActivity extends Activity implements ExitDialog.ExitListener
     @Override
     public void onExit() {
         mAuth.signOut();
-        finish();
     }
 }

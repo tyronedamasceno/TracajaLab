@@ -5,11 +5,20 @@ public class Exame {
     private String nome;
     private String orientacao;
     private String jejum;
+    private String resultado;
 
     public Exame(String nome, String orientacao, String jejum) {
         this.nome = nome;
         this.orientacao = orientacao;
         this.jejum = jejum;
+    }
+
+    public String getResultado() {
+        return resultado;
+    }
+
+    public void setResultado(String resultado) {
+        this.resultado = resultado;
     }
 
     @Override
