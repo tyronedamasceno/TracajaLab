@@ -51,6 +51,11 @@ public class ScheduleActivity extends Activity
                 getResources().getStringArray(R.array.exames)[0],
                 getResources().getStringArray(R.array.orientacoes)[0],
                 getResources().getStringArray(R.array.jejum)[0]);
+
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
+        database = FirebaseDatabase.getInstance();
+        pacientReference = database.getReference("pacientes");
     }
 
     @Override
@@ -93,13 +98,7 @@ public class ScheduleActivity extends Activity
     }
 
     public void updateDatabase() {
-
         String id = UUID.randomUUID().toString();
-
-        mAuth = FirebaseAuth.getInstance();
-        currentUser = mAuth.getCurrentUser();
-        database = FirebaseDatabase.getInstance();
-        pacientReference = database.getReference("pacientes");
         pacientReference.child(currentUser.getUid()).child("exames").child(id).setValue(currentExame);
     }
 }
