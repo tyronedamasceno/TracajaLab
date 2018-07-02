@@ -64,8 +64,7 @@ public class ResultsActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), button.getText().toString(), Toast.LENGTH_SHORT).show();
-                Log.i("OnClick", button.getText().toString());
+
             }
         };
     }
