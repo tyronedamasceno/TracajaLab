@@ -10,6 +10,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.tyrone.tracajalab.Domain.Exame;
+import com.example.tyrone.tracajalab.Domain.MyDate;
 import com.example.tyrone.tracajalab.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -22,6 +24,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
+import java.util.UUID;
 
 public class ResultsActivity extends Activity {
 
@@ -84,17 +88,23 @@ public class ResultsActivity extends Activity {
                             Map<String, Object> exams = (Map<String, Object>) dataSnapshot.getValue();
                             list = new ArrayList<>();
                             for (Map.Entry<String, Object> entry : exams.entrySet()) {
-                                list.add(entry.getKey());
-                            };
-                            for (int i = 0; i < list.size(); i++) {
-                                checkBox = new CheckBox(getApplicationContext());
-                                checkBox.setId(i);
-                                checkBox.setText(list.get(i));
-                                checkBox.setOnClickListener(getOnClickDoSomething(checkBox));
-                                resultsLayout.addView(checkBox);
-                            }
-                        } else {
 
+                                Map singleExam = (Map) entry.getValue();
+                                Map singleDate = (Map) singleExam.get("data");
+                                checkBox = new CheckBox(getApplicationContext());
+                                checkBox.setId(new Random().nextInt(987654321));
+
+                                checkBox.setText(singleExam.get("nome") + " " +
+                                        new MyDate(
+                                                ((Long)singleDate.get("year")).intValue(),
+                                                ((Long)singleDate.get("month")).intValue(),
+                                                ((Long)singleDate.get("dayOfMonth")).intValue()
+                                        ).toString());
+
+                                resultsLayout.addView(checkBox);
+                            };
+                        } else {
+                            resultsLayout.addView(txtMsg);
                         }
                     }
 
