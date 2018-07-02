@@ -10,7 +10,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.tyrone.tracajalab.Domain.Exame;
 import com.example.tyrone.tracajalab.Domain.MyDate;
 import com.example.tyrone.tracajalab.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,14 +20,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import java.util.UUID;
 
 public class ResultsActivity extends Activity {
 
+    private static final int RAND_BOUND = 999999999;
 
     private FirebaseUser currentUser;
     private FirebaseAuth mAuth;
@@ -39,8 +36,6 @@ public class ResultsActivity extends Activity {
     private LinearLayout resultsLayout;
     private CheckBox checkBox;
     private TextView txtMsg;
-
-    private ArrayList<String> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,13 +81,15 @@ public class ResultsActivity extends Activity {
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         if (dataSnapshot.getValue() != null) {
                             Map<String, Object> exams = (Map<String, Object>) dataSnapshot.getValue();
-                            list = new ArrayList<>();
+
                             for (Map.Entry<String, Object> entry : exams.entrySet()) {
 
                                 Map singleExam = (Map) entry.getValue();
                                 Map singleDate = (Map) singleExam.get("data");
+
                                 checkBox = new CheckBox(getApplicationContext());
-                                checkBox.setId(new Random().nextInt(987654321));
+                                checkBox.setId(new Random().nextInt(RAND_BOUND));
+                                checkBox.setOnClickListener(getOnClickDoSomething(checkBox));
 
                                 checkBox.setText(singleExam.get("nome") + " " +
                                         new MyDate(
