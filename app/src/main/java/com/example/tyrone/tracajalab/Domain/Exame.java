@@ -9,6 +9,14 @@ public class Exame {
     private MyDate data;
     private boolean pronto;
 
+    public Exame(String nome, String orientacao, String jejum, MyDate data, boolean pronto) {
+        this.nome = nome;
+        this.orientacao = orientacao;
+        this.jejum = jejum;
+        this.data = data;
+        this.pronto = pronto;
+    }
+
     public Exame(String nome, String orientacao, String jejum) {
         this.nome = nome;
         this.orientacao = orientacao;

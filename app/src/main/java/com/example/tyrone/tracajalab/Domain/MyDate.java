@@ -7,6 +7,12 @@ public class MyDate {
     private int hourOfDay;
     private int minute;
 
+    @Override
+    public String toString() {
+        String str = String.format("%d/%d/%d", this.dayOfMonth, this.month, this.year);
+        return str;
+    }
+
     public MyDate(int year, int month, int dayOfMonth, int hourOfDay, int minute) {
         this.year = year;
         this.month = month;
