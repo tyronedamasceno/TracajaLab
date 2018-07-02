@@ -34,7 +34,6 @@ public class WelcomeActivity extends Activity implements ExitDialog.ExitListener
         database = FirebaseDatabase.getInstance();
 
         pacientReference = database.getReference("pacientes");
-        pacientReference.child("Foo").setValue("Bar");
         txt_welcome = findViewById(R.id.txt_welcome);
         txt_welcome.setText(String.format("Olá %s, seja bem vindo!", currentUser.getEmail()));
 
