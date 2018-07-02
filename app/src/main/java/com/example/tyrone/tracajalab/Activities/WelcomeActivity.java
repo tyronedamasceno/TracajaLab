@@ -47,7 +47,8 @@ public class WelcomeActivity extends Activity implements ExitDialog.ExitListener
     }
 
     public void receiveResults(View view) {
-
+        Intent intent = new Intent(this, ResultsActivity.class);
+        startActivity(intent);
     }
 
     public void changeSchedule(View view) {
