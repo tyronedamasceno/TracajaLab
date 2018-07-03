@@ -22,7 +22,8 @@
         <activity android:name=".Activities.WelcomeActivity" />
         <activity android:name=".Activities.SignUpActivity" />
         <activity android:name=".Activities.ScheduleActivity" />
-        <activity android:name=".Activities.ResultsActivity"></activity>
+        <activity android:name=".Activities.ResultsActivity" />
+        <activity android:name=".Activities.EditScheduleActivity"></activity>
     </application>
 
 </manifest>
