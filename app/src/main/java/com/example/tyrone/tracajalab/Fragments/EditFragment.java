@@ -1,11 +1,13 @@
 package com.example.tyrone.tracajalab.Fragments;
 
+import android.app.Fragment;
 import android.app.ListFragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tyrone.tracajalab.Domain.Exame;
@@ -79,6 +81,6 @@ public class EditFragment extends ListFragment{
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
-        //Toast.makeText(getContext(), "Aqui", Toast.LENGTH_LONG).show();
+        Toast.makeText(getContext(), "Ainda não é possível alterar datas de exame", Toast.LENGTH_LONG).show();
     }
 }
