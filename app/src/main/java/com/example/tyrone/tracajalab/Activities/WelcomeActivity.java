@@ -51,7 +51,8 @@ public class WelcomeActivity extends Activity implements ExitDialog.ExitListener
     }
 
     public void changeSchedule(View view) {
-
+        Intent intent = new Intent(this, EditScheduleActivity.class);
+        startActivity(intent);
     }
 
     @Override
