@@ -9,6 +9,11 @@ public class Exame {
     private MyDate data;
     private boolean pronto;
 
+    public Exame(String nome, MyDate data) {
+        this.nome = nome;
+        this.data = data;
+    }
+
     public Exame(String nome, String orientacao, String jejum, MyDate data, boolean pronto) {
         this.nome = nome;
         this.orientacao = orientacao;
@@ -42,7 +47,9 @@ public class Exame {
 
     @Override
     public String toString() {
-        return this.nome;
+        if (data == null)
+            return this.nome;
+        return this.nome + " - " + this.data.toString();
     }
 
     public String getNome() {
